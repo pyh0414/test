@@ -1,0 +1,15 @@
+name: Production deploy
+
+# 수정된 택배사별로 Action이 실행되도록 해야함 (동시에하면 오류)
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run a one-line script
+        run: echo Hello, world!
