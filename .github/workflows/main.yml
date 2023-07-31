@@ -40,4 +40,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: asia-northeast3-docker.pkg.dev/${{secrets.EZ_PROJECT_ID}}/cj-return-tracking-collector/master:latest
+          tags: asia-northeast3-docker.pkg.dev/${{secrets.EZ_PROJECT_ID}}/cj-return-tracking-collector/test:latest
