@@ -1,0 +1,43 @@
+name: gogo
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node_version: [16]
+        os: [ubuntu-20.04]
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: login to GAR
+        uses: docker/login-action@v2
+        with:
+          registry: asia-northeast3-docker.pkg.dev
+          username: _json_key
+          password: ${{ secrets.EZ_BUILDER_KEY }}
+
+      - name: google auth
+        id: auth
+        uses: google-github-actions/auth@v1
+        with:
+          credentials_json: ${{ secrets.EZ_BUILDER_KEY }}
+
+      - uses: docker/login-action@v2
+        with:
+          registry: asia-northeast3-docker.pkg.dev
+          username: _json_key
+          password: ${{ secrets.EZ_BUILDER_KEY }}
+
+      - name: build and push
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          push: true
+          tags: asia-northeast3-docker.pkg.dev/${{secrets.EZ_PROJECT_ID}}/cj-return-tracking-collector/master:latest
