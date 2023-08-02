@@ -4,11 +4,11 @@ import mysql from "mysql2/promise";
   try {
     console.log(process.env);
     const connection = await mysql.createConnection({
-      host: process.env.HOST,
+      socketPath: process.env.INSTANCE_UNIX_SOCKET,
       port: 3306,
-      user: process.env.USER,
+      user: process.env.DB_USER,
       password: process.env.PASSWORD,
-      database: process.env.DB,
+      database: process.env.DB_NAME,
     });
 
     await connection.connect();
