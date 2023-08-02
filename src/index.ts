@@ -1,16 +1,19 @@
-import { createClient } from "redis";
+import mysql from "mysql2/promise";
 
 (async () => {
   try {
-    console.log("고고");
-    const redis = createClient({
-      url: process.env.REDIS_URL,
+    const connection = await mysql.createConnection({
+      host: "34.64.195.140",
+      port: 3306,
+      user: "yhpark",
+      password: "RqT6JRb%c3E9*3Ub",
+      database: "ezstorage",
     });
 
-    await redis.connect();
+    await connection.connect();
 
-    const keys = await redis.keys("*");
-    console.log(keys);
+    const result = await connection.query("select * from User");
+    console.log(result);
   } catch (err) {
     console.log(err);
   }
