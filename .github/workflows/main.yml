@@ -41,9 +41,3 @@ jobs:
           context: .
           push: true
           tags: asia-northeast3-docker.pkg.dev/easy-wms/cj-return-tracking-collector/apple:latest
-
-      - name: cloud run deploy
-        uses: "google-github-actions/deploy-cloudrun@v1"
-        with:
-          service: "hello-cloud-run"
-          image: "asia-northeast3-docker.pkg.dev/easy-wms/cj-return-tracking-collector/apple:latest"

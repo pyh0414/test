@@ -2,12 +2,13 @@ import mysql from "mysql2/promise";
 
 (async () => {
   try {
+    console.log(process.env);
     const connection = await mysql.createConnection({
-      host: "34.64.195.140",
+      host: process.env.HOST,
       port: 3306,
-      user: "yhpark",
-      password: "RqT6JRb%c3E9*3Ub",
-      database: "ezstorage",
+      user: process.env.USER,
+      password: process.env.PASSWORD,
+      database: process.env.DB,
     });
 
     await connection.connect();
