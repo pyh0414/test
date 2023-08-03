@@ -1,13 +1,10 @@
 {
   "compilerOptions": {
-    "target": "es2016",
+    "target": "es6",
     "module": "commonjs",
-    "outDir": "./dist",
+    "moduleResolution": "node",
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "skipLibCheck": true,
-    "strictNullChecks": true
-  },
-  "include": ["src/**/*"]
+    "rootDir": "src",
+    "outDir": "build"
+  }
 }

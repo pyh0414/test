@@ -2,8 +2,10 @@
   "name": "ttttt",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "build/index.js",
   "scripts": {
+    "gcp-build": "npm run build",
+    "start": "npm run build && npx @google-cloud/functions-framework --target=hello",
     "build": "rm -rf dist && tsc",
     "dev": "ts-node-dev --no-notify --respawn --poll src/index"
   },
@@ -20,7 +22,10 @@
   "dependencies": {
     "mysql2": "^3.5.2",
     "redis": "^4.6.7",
-    "ts-node-dev": "^2.0.0",
+    "ts-node-dev": "^2.0.0"
+  },
+  "devDependencies": {
+    "@google-cloud/functions-framework": "^3.3.0",
     "typescript": "^5.1.6"
   }
 }
