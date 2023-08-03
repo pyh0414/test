@@ -23,7 +23,7 @@ jobs:
           npm run build
 
       - name: Setup gcloud environment
-        uses: google-github-actions/setup-gcloud@v1.1.0
+        uses: google-github-actions/setup-gcloud@v0.0.5
         with:
           project_id: ${{ secrets.GCLOUD_PROJECT_ID }}
           service_account_email: pyh0803@easy-wms.iam.gserviceaccount.com
