@@ -7,7 +7,7 @@ import mysql from "mysql2/promise";
       socketPath: process.env.INSTANCE_UNIX_SOCKET,
       port: 3306,
       user: process.env.DB_USER,
-      password: process.env.PASS,
+      password: process.env.DB_PASS,
       database: process.env.DB_NAME,
     });
 
