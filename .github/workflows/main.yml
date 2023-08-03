@@ -31,14 +31,4 @@ jobs:
           export_default_credentials: true
 
       - name: deploy-function
-        run: gcloud functions deploy cjreturn
-          --gen2 \
-          --allow-unauthenticated \
-          --region=asia-northeast3 \
-          --runtime=nodejs18 \
-          --source=. \
-          --entry-point=hello \
-          --trigger-http \
-          --memory=2000 \
-          --run-service-account=pyh0803@easy-wms.iam.gserviceaccount.com \
-          --timeout=540
+        run: gcloud functions deploy cjreturn --gen2 --allow-unauthenticated --region=asia-northeast3 --runtime=nodejs18 --source=. --entry-point=hello --trigger-http --memory=2000 --run-service-account=pyh0803@easy-wms.iam.gserviceaccount.com --timeout=3600s
