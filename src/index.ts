@@ -1,6 +1,6 @@
 import mysql from "mysql2/promise";
 
-export const hello = async (req, res) => {
+export const entryPoint = async (req, res) => {
   console.log(process.env);
 
   try {
@@ -22,5 +22,5 @@ export const hello = async (req, res) => {
     console.log(err);
   }
 
-  return res.send("Hello!");
+  return res.send("entryPoint!");
 };

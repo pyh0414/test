@@ -5,7 +5,7 @@
   "main": "build/index.js",
   "scripts": {
     "gcp-build": "npm run build",
-    "start": "npm run build && npx @google-cloud/functions-framework --target=hello",
+    "start": "npm run build && npx @google-cloud/functions-framework --target=entryPoint",
     "build": "rm -rf dist && tsc",
     "dev": "ts-node-dev --no-notify --respawn --poll src/index"
   },
