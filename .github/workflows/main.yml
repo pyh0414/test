@@ -26,7 +26,7 @@ jobs:
         uses: google-github-actions/setup-gcloud@v0.5.0
         with:
           project_id: ${{ secrets.GCLOUD_PROJECT_ID }}
-          service_account_email: pyh0803@easy-wms.iam.gserviceaccount.com
+          service_account_email: cjreturnorder@easy-wms.iam.gserviceaccount.com
           service_account_key: ${{ secrets.GCP_SA_KEY }}
           export_default_credentials: true
 
@@ -39,7 +39,7 @@ jobs:
           --entry-point=entryPoint
           --trigger-http
           --memory=2000
-          --run-service-account=pyh0803@easy-wms.iam.gserviceaccount.com
+          --run-service-account=cjreturnorder@easy-wms.iam.gserviceaccount.com
           --timeout=3600s
           --set-env-vars INSTANCE_UNIX_SOCKET=${{ secrets.INSTANCE_UNIX_SOCKET }},INSTANCE_CONNECTION_NAME=${{ secrets.INSTANCE_CONNECTION_NAME }},DB_NAME=${{ secrets.DB_NAME }},DB_USER=${{ secrets.DB_USER }},DB_PASS=${{ secrets.DB_PASS }},
 
